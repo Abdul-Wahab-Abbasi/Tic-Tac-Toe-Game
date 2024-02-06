@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="audio" src="/audio/mixkit-cool-interface-click-tone-2568.wav"></audio>
+    <audio id="audiotwo" src="/audio/comedy-failure-sound-effect-68945313.mp3"></audio>
+    <audio id="audiothree" src="/audio/ta-da-brass-band-soundroll-1-00-04.mp3"></audio>
+    <header>
+        <a  href="index.html"><span style="color: rgb(241, 70, 104);">Tic</span><span style="color: rgb(0, 153, 255);">Tac</span><span style="color: red;">Toe</span></a>
+        <button id="mode">Mode</button>
+    </header>
+    
+    <main>
+        <div class="counter-box">
+            Next Match Start's in
+            <p id="counter" onclick="count()" class="counter">
+                5
+                </p>
+        </div>
+        <div>
+            <div class="player-box">
+                <div class="alert turn"><i class="fa-solid fa-caret-up"></i></div>
+                <h3>Player-1 (<i class="fa-solid fa-o"></i>)</h3>
+                <ul>
+                    <li>Wins: <span id="pl-1-win"></span></li>
+                </ul>
+            </div>
+            <div class="player-box">
+                <div class="alert"><i class="fa-solid fa-caret-up"></i></div>
+                <h3>Player-2 (<i class="fa-solid fa-x"></i>)</h3>
+                <ul>
+                    <li>Wins: <span id="pl-2-win"></span></li>
+                </ul>
+            </div>
+        </div>
+    <div id="block">
+        <div id="overlay" class="overlay">
+            Player-1 Wins
+        </div>
+        <p style="border-top: none; border-left: none;"  id="display" class="display rone colone crossone">
+            <i class="icon fa-solid " ></i>
+        </p>
+        <p style=" border-top: none;" id="display" class="display rone coltwo">
+            <i class="icon fa-solid " ></i>
+        </p>
+        <p style="border-top: none; border-right: none;" id="display" class="display rone colthree crosstwo">
+            <i class="icon fa-solid " ></i>
+        </p>
+        <p style=" border-left: none;" id="display" class="display rtwo colone">
+            <i class="icon fa-solid " ></i>
+        </p>
+        <p  id="display" class="display rtwo coltwo crossone crosstwo">
+            <i class="icon fa-solid " ></i>
+        </p>
+        <p style=" border-right: none;" id="display" class="display rtwo colthree">
+            <i class="icon fa-solid " ></i>
+        </p>
+        <p style="border-bottom: none; border-left: none;" id="display" class="display rthree colone crosstwo">
+            <i class="icon fa-solid " ></i>
+        </p>
+        <p style="border-bottom: none; " id="display" class="display rthree coltwo">
+            <i class="icon fa-solid " ></i>
+        </p>
+        <p style="border-bottom: none; border-right: none;" id="display" class="display rthree colthree crossone">
+            <i class="icon fa-solid " ></i>
+        </p>
+    </div>
+    <p style="display: none;"><i class="fa-solid fa-x active" id="x"></i> <i class="fa-solid fa-o" id="o"></i></p>
+</main>
+<footer>
+    Devloped By Abdul Wahab
+    <div class="copyrightinfo">© 2023 Abdul Wahab | All rights reserved</div>
+</footer>
+    <script src="script.js"></script>
+</body>
+</html>

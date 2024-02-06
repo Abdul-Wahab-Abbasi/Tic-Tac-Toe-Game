@@ -1,0 +1,214 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+/* Light Mode */
+:root{
+    --bgMain:rgb(235, 235, 235);
+    --bgHeader:rgb(255, 255, 255);
+    --blockBorder:black;
+}
+/* Dark Mode */
+.root{
+    --bgMain:rgb(27, 26, 26);
+    --bgHeader:rgb(58, 57, 57);
+    --blockBorder:rgb(235, 235, 235);
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: var(--bgMain);
+}
+header{
+    background-color: var(--bgHeader);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+main{
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    gap: 2rem;
+    height:90vh ;
+}
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 6rem;
+    background-color: rgba(0, 0, 0, 0.393);
+    text-transform: uppercase;
+}
+.overlayactive{
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+}
+#block{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: max-content;
+    position: relative;
+    background-color: var(--bgHeader);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.gameover{
+    pointer-events: none;
+}
+.display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 16rem;
+    width: 16rem;
+    border: 1px solid var(--blockBorder);
+    font-size: 8rem;
+
+}
+.fa-x{
+    color: rgb(0, 153, 255);
+}
+.fa-o{
+    color: rgb(241, 70, 104);
+}
+.active{
+    display: none;
+}
+p{
+    cursor: pointer;
+}
+.player-box{
+    background-color: rgb(145, 197, 231);
+    font-size: 3rem;
+    padding: 1rem 2rem;
+    color: #fff;
+    margin: 0rem 1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    position: relative;
+    border-radius: 1rem;
+    border:0.2rem solid rgb(0,153,255);
+    display: inline-block;
+}
+.alert{
+    transition: all 0.2s linear;
+    opacity: 0;
+    position: absolute;
+    color: red;
+    bottom: -50%;
+    left: 40%;
+    font-size: 5rem;
+    animation-name: alert;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    z-index: 4;
+}
+@keyframes alert {
+    from{
+        transform: translateY(10%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+.player-box .turn{
+    opacity: 1;
+}
+.player-box:first-child{
+    background-color: rgb(251, 146, 167);
+    border:0.2rem solid rgb(241, 70, 104);
+}
+.player-box ul{
+    margin-top: 2rem;
+}
+.counter-box{
+    position: absolute;
+    top: 0%;
+    left: 30%;
+    background-color: rgb(241, 70, 104);
+    border-radius: 1rem;
+    border: 0.1rem solid rgb(255, 255, 255);
+    padding: 1rem;
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    transition: all 0.2s linear;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 90;
+}
+.counter-box-active{
+    transform: translateY(0%);
+    opacity: 1;
+    visibility: visible;
+}
+#counter{
+    font-size: 1.6rem;
+}
+footer,header{
+    color: rgb(0, 153, 255);
+    font-size: 3rem;
+    height: 10vh;
+}
+footer{
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+footer .copyrightinfo{
+    font-size: 1.5rem;
+    color: rgb(241, 70, 104);
+}
+@media (max-width:2000px){
+    html{
+        font-size: 100%;
+    }
+}
+@media (max-width:1600px){
+    html{
+        font-size: 62.5%;
+    }
+}
+@media (max-width:1200px){
+    html{
+        font-size: 55%;
+    }
+}
+@media (max-width:900px) {
+    html{
+        font-size: 45%;
+    }
+}
+@media (max-width:400px) {
+    html{
+        font-size: 35%;
+    }
+    
+}
+#mode{
+    background-color:var(--bgMain) ;
+    font-size: 2rem;
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: var(--blockBorder);
+    cursor: pointer;
+}
